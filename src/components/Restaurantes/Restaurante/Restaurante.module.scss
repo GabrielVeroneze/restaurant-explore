@@ -1,0 +1,56 @@
+.restaurante {
+    background-color: #f2f6ff;
+    margin-top: 2rem;
+    padding: 1.875rem;
+
+    .mais {
+        background: #ffffff;
+        border-color: #000000;
+        border-radius: 28px;
+        border-style: solid;
+        color: #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 500;
+        padding: 0.625rem 1.25rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            background: #f2745f;
+            border-color: #f2745f;
+            color: #ffffff;
+        }
+    }
+
+    .titulo {
+        font-size: 1.75rem;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.5rem;
+        padding-bottom: 1rem;
+        position: relative;
+        width: max-content;
+
+        &:before {
+            background-color: #111111;
+            bottom: 0;
+            content: '';
+            height: 5px;
+            left: 0;
+            position: absolute;
+            width: 55px;
+        }
+
+        &:after {
+            background-color: #333333;
+            bottom: 2px;
+            content: '';
+            height: 1px;
+            left: 0;
+            max-width: 100%;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
