@@ -1,0 +1,23 @@
+.banner {
+    align-items: center;
+    background: linear-gradient(
+            rgba(240, 240, 240, 0.144),
+            rgba(255, 255, 255, 0.336)
+        ),
+        url('https://i.postimg.cc/wT3TQS3V/header-image2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+
+    .titulo, .texto {
+        font-size: 1.6rem;
+    }
+
+    .titulo {
+        text-transform: uppercase;
+    }
+}
