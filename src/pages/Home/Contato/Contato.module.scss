@@ -10,13 +10,22 @@
     }
 
     .conteudo {
+        align-items: center;
         background-color: #f2745f;
         color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 254px;
+        justify-content: center;
         padding: 1.875rem;
         text-align: center;
 
         .texto {
-            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 2rem;
+            margin-bottom: 1.25rem;
             max-width: 70%;
         }
 

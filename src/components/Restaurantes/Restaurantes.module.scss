@@ -1,4 +1,14 @@
 .restaurantes {
     margin-top: 1.5rem;
     padding: 2rem;
+
+    .titulo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 2rem;
+
+        em {
+            font-style: italic;
+        }
+    }
 }

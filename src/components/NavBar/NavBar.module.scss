@@ -1,4 +1,5 @@
 .navegacao {
+    padding: 1rem 0;
     text-align: center;
 
     .item {
@@ -20,6 +21,7 @@
 
         .link {
             font-size: 1.5rem;
+            line-height: 2rem;
             text-decoration: none;
 
             &:visited {

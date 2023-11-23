@@ -10,14 +10,17 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
+    gap: 2.25rem;
     height: 50vh;
     justify-content: center;
 
-    .titulo, .texto {
-        font-size: 1.6rem;
+    .titulo {
+        font-size: 2.375rem;
+        font-weight: 700;
+        text-transform: uppercase;
     }
 
-    .titulo {
-        text-transform: uppercase;
+    .texto {
+        font-size: 1.6rem;
     }
 }
