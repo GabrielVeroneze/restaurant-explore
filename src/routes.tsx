@@ -1,11 +1,15 @@
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from '@/pages/Home'
+import VitrineRestaurantes from '@/pages/VitrineRestaurantes'
 
 const AppRoutes = () => {
     return (
-        <Routes>
-            <Route path="/" element={} />
-            <Route path="/restaurantes" element={} />
-        </Routes>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/restaurantes" element={<VitrineRestaurantes />} />
+            </Routes>
+        </Router>
     )
 }
 
