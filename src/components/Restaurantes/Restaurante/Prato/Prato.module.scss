@@ -1,0 +1,55 @@
+.prato {
+    text-align: center;
+    width: 240px;
+
+    .container {
+        border-radius: 0 0 20px 20px;
+        display: inline-block;
+        height: 230px;
+        overflow: hidden;
+        width: 200px;
+
+        .efeito {
+            background: #c8c2c2;
+            border-radius: 20px;
+            font-size: 0;
+            height: 250px;
+            margin: 30px 0 0 0;
+            overflow: hidden;
+            transform: skew(0deg, 13deg);
+            width: 200px;
+
+            .imagem {
+                height: 250px;
+                margin: -35px 0 0 -70px;
+                transform: skew(0deg, -13deg);
+            }
+        }
+    }
+
+    .conteudo {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        font-size: 0.875rem;
+        line-height: 19px;
+        margin: -120px 0 0 0;
+        padding: 120px 20px 20px 20px;
+        text-align: left;
+
+        .nome {
+            font-size: 1.125rem;
+            margin: 1.25rem 0 0.625rem 0;
+        }
+
+        .tag {
+            background: #f2745f;
+            border-radius: 50px;
+            color: #ffffff;
+            display: inline-block;
+            font-weight: bold;
+            margin: 1rem 0;
+            padding: 0.75rem 1rem;
+        }
+    }
+}
