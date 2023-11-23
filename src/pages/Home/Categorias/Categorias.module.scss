@@ -1,3 +1,5 @@
+@use '@/sass/variaveis' as *;
+
 .categorias {
     align-items: center;
     display: flex;
@@ -8,14 +10,14 @@
         text-align: center;
 
         .imagem {
-            border: 10px solid #eaf0ff;
+            border: 10px solid $azul-claro;
             border-radius: 50%;
             max-width: 100%;
             overflow: hidden;
         }
 
         .subtitulo {
-            color: #121212;
+            color: $preto-escuro;
             font-size: 1.375rem;
             font-weight: 600;
             line-height: 1.875rem;

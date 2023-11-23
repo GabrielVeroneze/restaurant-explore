@@ -1,14 +1,16 @@
+@use '@/sass/variaveis' as *;
+
 .restaurante {
-    background-color: #f2f6ff;
+    background-color: $fundo-azul-claro;
     margin-top: 2rem;
     padding: 1.875rem;
 
     .mais {
-        background: #ffffff;
-        border-color: #000000;
+        background: $branco;
+        border-color: $preto;
         border-radius: 28px;
         border-style: solid;
-        color: #000000;
+        color: $preto;
         cursor: pointer;
         display: inline-block;
         font-weight: 500;
@@ -17,9 +19,9 @@
         text-transform: uppercase;
 
         &:hover {
-            background: #f2745f;
-            border-color: #f2745f;
-            color: #ffffff;
+            background: $fundo-laranja;
+            border-color: $fundo-laranja;
+            color: $branco;
         }
     }
 

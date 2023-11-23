@@ -1,3 +1,5 @@
+@use '@/sass/variaveis' as *;
+
 .navegacao {
     padding: 1rem 0;
     text-align: center;
@@ -7,7 +9,7 @@
         margin: 0 0.5rem;
 
         &::after {
-            background: #000000;
+            background: $preto;
             content: '';
             display: block;
             height: 2px;
@@ -25,7 +27,7 @@
             text-decoration: none;
 
             &:visited {
-                color: #000000;
+                color: $preto;
             }
         }
     }

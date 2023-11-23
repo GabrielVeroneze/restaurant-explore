@@ -1,3 +1,5 @@
+@use '@/sass/variaveis' as *;
+
 .contato {
     align-items: center;
     display: flex;
@@ -11,8 +13,8 @@
 
     .conteudo {
         align-items: center;
-        background-color: #f2745f;
-        color: #ffffff;
+        background-color: $fundo-laranja;
+        color: $branco;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -30,7 +32,7 @@
         }
 
         .link {
-            color: #631406;
+            color: $marrom-escuro;
             font-weight: bold;
             text-decoration: none;
         }

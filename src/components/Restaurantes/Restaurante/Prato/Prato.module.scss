@@ -1,3 +1,5 @@
+@use '@/sass/variaveis' as *;
+
 .prato {
     text-align: center;
     width: 240px;
@@ -10,7 +12,7 @@
         width: 200px;
 
         .efeito {
-            background: #c8c2c2;
+            background: $fundo-cinza-claro;
             border-radius: 20px;
             font-size: 0;
             height: 250px;
@@ -28,7 +30,7 @@
     }
 
     .conteudo {
-        background: #ffffff;
+        background: $branco;
         border-radius: 20px;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
         font-size: 0.875rem;
@@ -44,9 +46,9 @@
         }
 
         .tag {
-            background: #f2745f;
+            background: $fundo-laranja;
             border-radius: 50px;
-            color: #ffffff;
+            color: $branco;
             display: inline-block;
             font-weight: bold;
             margin: 1rem 0;

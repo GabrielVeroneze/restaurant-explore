@@ -1,7 +1,9 @@
+@use '@/sass/variaveis' as *;
+
 .rodape {
     align-items: center;
-    background-color: #363e50;
-    color: #ffffff;
+    background-color: $fundo-azul-escuro;
+    color: $branco;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -13,9 +15,9 @@
         gap: 0.625rem;
 
         .icone {
-            background-color: #ffffff;
+            background-color: $branco;
             border-radius: 50%;
-            color: #363e50;
+            color: $fundo-azul-escuro;
             height: 36px;
             line-height: 36px;
             text-align: center;
