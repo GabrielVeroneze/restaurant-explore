@@ -1,0 +1,29 @@
+.contato {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+
+    .imagem {
+        max-height: 185px;
+    }
+
+    .conteudo {
+        background-color: #f2745f;
+        color: #ffffff;
+        padding: 1.875rem;
+        text-align: center;
+
+        .texto {
+            display: inline-block;
+            max-width: 70%;
+        }
+
+        .link {
+            color: #631406;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+}
