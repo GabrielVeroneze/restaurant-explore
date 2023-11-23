@@ -1,0 +1,24 @@
+.categorias {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .tipo {
+        text-align: center;
+
+        .imagem {
+            border: 10px solid #eaf0ff;
+            border-radius: 50%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .subtitulo {
+            color: #121212;
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-top: 1.25rem;
+        }
+    }
+}
