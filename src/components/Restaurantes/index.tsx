@@ -90,7 +90,7 @@ const Restaurantes = () => {
 
     return (
         <section className={styles.restaurantes}>
-            <h1>
+            <h1 className={styles.titulo}>
                 Os restaurantes mais <em>bacanas</em>!
             </h1>
             {listaRestaurantes?.map(item => (

@@ -13,8 +13,10 @@ const Home = () => {
             <Banner />
             <Contato />
             <Categorias />
-            <div className={styles.links}>
-                <h3>Conheça os melhores restaurantes</h3>
+            <div className={styles.restaurantes}>
+                <h3 className={styles.subtitulo}>
+                    Conheça os melhores restaurantes
+                </h3>
                 <p>
                     Clique <Link to="/restaurantes">aqui</Link>
                 </p>
