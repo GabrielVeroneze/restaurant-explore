@@ -7,10 +7,13 @@ import styles from './Restaurantes.module.scss'
 
 const Restaurantes = () => {
     const [listaRestaurantes, setListaRestaurantes] = useState<IRestaurante[]>([])
+    const [proximaPagina, setProximaPagina] = useState<string>('')
+
     useEffect(() => {
         axios.get<IPaginacao<IRestaurante>>('http://localhost:8000/api/v1/restaurantes/')
             .then(resposta => {
                 setListaRestaurantes(resposta.data.results)
+                setProximaPagina(resposta.data.next)
             })
             .catch(erro => {
                 console.log(erro)
