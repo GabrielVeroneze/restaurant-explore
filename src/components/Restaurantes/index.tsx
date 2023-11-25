@@ -28,6 +28,11 @@ const Restaurantes = () => {
             {listaRestaurantes?.map(item => (
                 <Restaurante key={item.id} restaurante={item} />
             ))}
+            {proximaPagina && (
+                <button onClick={() => verMais()}>
+                    Ver Mais
+                </button>
+            )}
         </section>
     )
 }
