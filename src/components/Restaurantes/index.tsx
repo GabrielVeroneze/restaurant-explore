@@ -20,6 +20,20 @@ const Restaurantes = () => {
             })
     }, [])
 
+    const verMais = () => {
+        axios.get<IPaginacao<IRestaurante>>(proximaPagina)
+            .then(resposta => {
+                setListaRestaurantes([
+                    ...listaRestaurantes,
+                    ...resposta.data.results
+                ])
+                setProximaPagina(resposta.data.next)
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    }
+
     return (
         <section className={styles.restaurantes}>
             <h1 className={styles.titulo}>
