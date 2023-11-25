@@ -1,8 +1,21 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { IRestaurante } from '@/interfaces/IRestaurante'
+import { IPaginacao } from '@/interfaces/IPaginacao'
 import Restaurante from './Restaurante'
 import styles from './Restaurantes.module.scss'
 
 const Restaurantes = () => {
+    const [listaRestaurantes, setListaRestaurantes] = useState<IRestaurante[]>([])
+    useEffect(() => {
+        axios.get<IPaginacao<IRestaurante>>('http://localhost:8000/api/v1/restaurantes/')
+            .then(resposta => {
+                setListaRestaurantes(resposta.data.results)
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    }, [])
 
     return (
         <section className={styles.restaurantes}>
