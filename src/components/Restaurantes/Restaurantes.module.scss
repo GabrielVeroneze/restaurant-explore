@@ -1,3 +1,5 @@
+@use '@/sass/variaveis' as *;
+
 .restaurantes {
     margin-top: 1.5rem;
     padding: 2rem;
@@ -9,6 +11,26 @@
 
         em {
             font-style: italic;
+        }
+    }
+    
+    .mais {
+        background: $branco;
+        border-color: $preto;
+        border-radius: 28px;
+        border-style: solid;
+        color: $preto;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 500;
+        padding: 0.625rem 1.25rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            background: $fundo-laranja;
+            border-color: $fundo-laranja;
+            color: $branco;
         }
     }
 }
