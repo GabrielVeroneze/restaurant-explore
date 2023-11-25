@@ -43,7 +43,10 @@ const Restaurantes = () => {
                 <Restaurante key={item.id} restaurante={item} />
             ))}
             {proximaPagina && (
-                <button onClick={() => verMais()}>
+                <button
+                    className={styles.mais}
+                    onClick={() => verMais()}
+                >
                     Ver Mais
                 </button>
             )}
