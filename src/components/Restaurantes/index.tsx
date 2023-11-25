@@ -1,7 +1,9 @@
+import { useBuscarRestaurantes } from '@/hooks/useBuscarRestaurantes'
 import Restaurante from './Restaurante'
 import styles from './Restaurantes.module.scss'
 
 const Restaurantes = () => {
+    const { listaRestaurantes, proximaPagina, verMais } = useBuscarRestaurantes()
 
     return (
         <section className={styles.restaurantes}>
