@@ -24,6 +24,21 @@ const AdministracaoRestaurantes = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
+                    {restaurantes.map(restaurante => (
+                        <TableRow key={restaurante.id}>
+                            <TableCell>
+                                {restaurante.nome}
+                            </TableCell>
+                            <TableCell>
+                                Editar
+                            </TableCell>
+                            <TableCell>
+                                <Button color="error" variant="outlined">
+                                    Excluir
+                                </Button>
+                            </TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </TableContainer>
