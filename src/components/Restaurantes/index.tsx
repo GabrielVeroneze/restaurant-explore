@@ -3,7 +3,7 @@ import Restaurante from './Restaurante'
 import styles from './Restaurantes.module.scss'
 
 const Restaurantes = () => {
-    const { listaRestaurantes, proximaPagina, verMais } = useBuscarRestaurantes()
+    const { listaRestaurantes, carregarDados, proximaPagina, paginaAnterior } = useBuscarRestaurantes()
 
     return (
         <section className={styles.restaurantes}>
@@ -13,14 +13,20 @@ const Restaurantes = () => {
             {listaRestaurantes?.map(item => (
                 <Restaurante key={item.id} restaurante={item} />
             ))}
-            {proximaPagina && (
-                <button
-                    className={styles.mais}
-                    onClick={() => verMais()}
-                >
-                    Ver Mais
-                </button>
-            )}
+            <button
+                className={styles.botao}
+                onClick={() => carregarDados(paginaAnterior)}
+                disabled={!paginaAnterior}
+            >
+                Página Anterior
+            </button>
+            <button
+                className={styles.botao}
+                onClick={() => carregarDados(proximaPagina)}
+                disabled={!proximaPagina}
+            >
+                Próxima Página
+            </button>
         </section>
     )
 }
