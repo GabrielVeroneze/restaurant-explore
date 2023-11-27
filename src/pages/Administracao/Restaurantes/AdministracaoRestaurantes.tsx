@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import { IRestaurante } from '@/interfaces/IRestaurante'
 
@@ -30,7 +31,11 @@ const AdministracaoRestaurantes = () => {
                                 {restaurante.nome}
                             </TableCell>
                             <TableCell>
-                                Editar
+                                [{' '}
+                                <Link to={`/admin/restaurantes/${restaurante.id}`}>
+                                    Editar
+                                </Link>
+                                {' '}]
                             </TableCell>
                             <TableCell>
                                 <Button color="error" variant="outlined">
