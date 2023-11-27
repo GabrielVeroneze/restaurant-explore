@@ -13,6 +13,7 @@ const AppRoutes = () => {
                 <Route path="/admin/restaurantes">
                     <Route index element={<AdministracaoRestaurantes />} />
                     <Route path="novo" element={<FormularioRestaurante />} />
+                    <Route path=":id" element={<FormularioRestaurante />} />
                 </Route>
             </Routes>
         </Router>
