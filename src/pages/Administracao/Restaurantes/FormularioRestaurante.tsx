@@ -2,10 +2,12 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
+import { useAdministrarRestaurantes } from '@/hooks/useAdministrarRestaurantes'
 import { IRestaurante } from '@/interfaces/IRestaurante'
 
 const FormularioRestaurante = () => {
     const { id } = useParams()
+    const { cadastrarRestaurante, editarRestaurante } = useAdministrarRestaurantes()
     const [nomeRestaurante, setNomeRestaurante] = useState<string>('')
 
     useEffect(() => {
@@ -23,7 +25,9 @@ const FormularioRestaurante = () => {
     const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
         if (id) {
+            editarRestaurante(nomeRestaurante, id)
         } else {
+            cadastrarRestaurante(nomeRestaurante)
         }
     }
 
