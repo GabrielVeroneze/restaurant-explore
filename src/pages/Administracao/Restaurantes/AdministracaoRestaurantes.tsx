@@ -15,6 +15,14 @@ const AdministracaoRestaurantes = () => {
     }, [])
 
     const excluirRestaurante = (restauranteId: number) => {
+        axios.delete(`http://localhost:8000/api/v2/restaurantes/${restauranteId}/`)
+        .then(() => {
+            setRestaurantes(
+                restaurantes.filter(
+                    restaurante => restaurante.id !== restauranteId
+                )
+            )
+        })
     }
 
     return (
