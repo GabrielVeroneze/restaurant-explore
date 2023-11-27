@@ -17,6 +17,26 @@ export const useAdministrarRestaurantes = () => {
             })
     }
 
+    const cadastrarRestaurante = (nomeRestaurante: string) => {
+        axios
+            .post('http://localhost:8000/api/v2/restaurantes/', {
+                nome: nomeRestaurante,
+            })
+            .then(() => {
+                alert('Restaurante cadastrado com sucesso!')
+            })
+    } 
+
+    const editarRestaurante = (nomeRestaurante: string, restauranteId: string) => {
+        axios
+            .put(`http://localhost:8000/api/v2/restaurantes/${restauranteId}/`, {
+                nome: nomeRestaurante,
+            })
+            .then(() => {
+                alert('Restaurante atualizado com sucesso!')
+            })
+    }
+
     const excluirRestaurante = (restauranteId: number) => {
         axios
             .delete(`http://localhost:8000/api/v2/restaurantes/${restauranteId}/`)
@@ -31,6 +51,8 @@ export const useAdministrarRestaurantes = () => {
 
     return {
         restaurantes,
+        cadastrarRestaurante,
+        editarRestaurante,
         excluirRestaurante,
     }
 }

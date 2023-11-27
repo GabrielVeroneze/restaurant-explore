@@ -22,23 +22,8 @@ const FormularioRestaurante = () => {
 
     const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
-
         if (id) {
-            axios
-                .put(`http://localhost:8000/api/v2/restaurantes/${id}/`, {
-                    nome: nomeRestaurante,
-                })
-                .then(() => {
-                    alert('Restaurante atualizado com sucesso!')
-                })
         } else {
-            axios
-                .post('http://localhost:8000/api/v2/restaurantes/', {
-                    nome: nomeRestaurante,
-                })
-                .then(() => {
-                    alert('Restaurante cadastrado com sucesso!')
-                })
         }
     }
 
