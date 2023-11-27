@@ -1,11 +1,14 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
 
 const FormularioRestaurante = () => {
     const { id } = useParams()
     const [nomeRestaurante, setNomeRestaurante] = useState<string>('')
+
+    useEffect(() => {
+    }, [id])
 
     const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
