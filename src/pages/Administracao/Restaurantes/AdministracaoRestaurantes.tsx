@@ -14,6 +14,9 @@ const AdministracaoRestaurantes = () => {
             })
     }, [])
 
+    const excluirRestaurante = (restauranteId: number) => {
+    }
+
     return (
         <TableContainer component={Paper}>
             <Table>
@@ -38,7 +41,11 @@ const AdministracaoRestaurantes = () => {
                                 {' '}]
                             </TableCell>
                             <TableCell>
-                                <Button color="error" variant="outlined">
+                                <Button
+                                    color="error"
+                                    variant="outlined"
+                                    onClick={() => excluirRestaurante(restaurante.id)}
+                                >
                                     Excluir
                                 </Button>
                             </TableCell>
