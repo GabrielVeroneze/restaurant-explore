@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 import { useEffect, useState } from 'react'
 import { IRestaurante } from '@/interfaces/IRestaurante'
 import { IPaginacao } from '@/interfaces/IPaginacao'
@@ -8,8 +8,8 @@ export const useBuscarRestaurantes = () => {
     const [proximaPagina, setProximaPagina] = useState<string>('')
     const [paginaAnterior, setPaginaAnterior] = useState<string>('')
 
-    const carregarDados = (url: string) => {
-        axios.get<IPaginacao<IRestaurante>>(url)
+    const carregarDados = (url: string, opcoes: AxiosRequestConfig = {}) => {
+        axios.get<IPaginacao<IRestaurante>>(url, opcoes)
             .then(resposta => {
                 setListaRestaurantes(resposta.data.results)
                 setProximaPagina(resposta.data.next)
