@@ -9,6 +9,16 @@ const Restaurantes = () => {
     const { listaRestaurantes, carregarDados, proximaPagina, paginaAnterior } = useBuscarRestaurantes()
     const [termoDePesquisa, setTermoDePesquisa] = useState<string>('')
 
+    const handleSearchSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault()
+        
+        carregarDados('http://localhost:8000/api/v1/restaurantes/', {
+            params: {
+                search: termoDePesquisa
+            }
+        })
+    }
+
     return (
         <section className={styles.restaurantes}>
             <div className={styles.container}>
