@@ -7,6 +7,7 @@ import styles from './Restaurantes.module.scss'
 
 const Restaurantes = () => {
     const { listaRestaurantes, carregarDados, proximaPagina, paginaAnterior } = useBuscarRestaurantes()
+    const [termoDePesquisa, setTermoDePesquisa] = useState<string>('')
 
     return (
         <section className={styles.restaurantes}>
@@ -19,6 +20,8 @@ const Restaurantes = () => {
                         label="Busque por Restaurantes"
                         variant="outlined"
                         size="small"
+                        value={termoDePesquisa}
+                        onChange={evento => setTermoDePesquisa(evento.target.value)}
                     />
                     <IconButton type="submit" aria-label="busca">
                         <SearchIcon />
