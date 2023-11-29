@@ -8,6 +8,7 @@ import styles from './Restaurantes.module.scss'
 const Restaurantes = () => {
     const { listaRestaurantes, carregarDados, proximaPagina, paginaAnterior } = useBuscarRestaurantes()
     const [termoDePesquisa, setTermoDePesquisa] = useState<string>('')
+    const [opcaoDeOrdenacao, setOpcaoDeOrdenacao] = useState<string>('')
 
     const handleSearchSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
@@ -53,7 +54,12 @@ const Restaurantes = () => {
                         }}
                     >
                         <InputLabel id="select-label">Ordenar Por</InputLabel>
-                        <Select labelId="select-label" label="Ordenar Por">
+                        <Select
+                            labelId="select-label"
+                            label="Ordenar Por"
+                            value={opcaoDeOrdenacao}
+                            onChange={evento => setOpcaoDeOrdenacao(evento.target.value)}
+                        >
                             <MenuItem sx={{ fontStyle: 'italic' }} value="">
                                 Nenhum
                             </MenuItem>
