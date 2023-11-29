@@ -1,6 +1,6 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { IRestaurante } from '@/interfaces/IRestaurante'
+import http from '@/http'
 
 export const useAdministrarRestaurantes = () => {
     const [restaurantes, setRestaurantes] = useState<IRestaurante[]>([])
@@ -10,16 +10,16 @@ export const useAdministrarRestaurantes = () => {
     }, [])
 
     const carregarRestaurantes = () => {
-        axios
-            .get<IRestaurante[]>('http://localhost:8000/api/v2/restaurantes/')
+        http
+            .get<IRestaurante[]>('restaurantes/')
             .then(resposta => {
                 setRestaurantes(resposta.data)
             })
     }
 
     const cadastrarRestaurante = (nomeRestaurante: string) => {
-        axios
-            .post('http://localhost:8000/api/v2/restaurantes/', {
+        http
+            .post('restaurantes/', {
                 nome: nomeRestaurante,
             })
             .then(() => {
@@ -28,8 +28,8 @@ export const useAdministrarRestaurantes = () => {
     } 
 
     const editarRestaurante = (nomeRestaurante: string, restauranteId: string) => {
-        axios
-            .put(`http://localhost:8000/api/v2/restaurantes/${restauranteId}/`, {
+        http
+            .put(`restaurantes/${restauranteId}/`, {
                 nome: nomeRestaurante,
             })
             .then(() => {
@@ -38,8 +38,8 @@ export const useAdministrarRestaurantes = () => {
     }
 
     const excluirRestaurante = (restauranteId: number) => {
-        axios
-            .delete(`http://localhost:8000/api/v2/restaurantes/${restauranteId}/`)
+        http
+            .delete(`restaurantes/${restauranteId}/`)
             .then(() => {
                 setRestaurantes(
                     restaurantes.filter(
