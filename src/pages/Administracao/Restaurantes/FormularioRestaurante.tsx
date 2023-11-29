@@ -33,7 +33,7 @@ const FormularioRestaurante = () => {
 
     return (
         <Box
-            component='main'
+            component="main"
             sx={{
                 alignItems: 'center',
                 display: 'flex',
@@ -52,7 +52,12 @@ const FormularioRestaurante = () => {
                     fullWidth
                     required
                 />
-                <Button type="submit" variant="outlined" fullWidth sx={{ mt: 2 }}>
+                <Button
+                    type="submit"
+                    variant="outlined"
+                    fullWidth
+                    sx={{ mt: 2 }}
+                >
                     Salvar
                 </Button>
             </form>
