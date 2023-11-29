@@ -1,9 +1,9 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Box, Button, TextField, Typography } from '@mui/material'
 import { useAdministrarRestaurantes } from '@/hooks/useAdministrarRestaurantes'
 import { IRestaurante } from '@/interfaces/IRestaurante'
+import http from '@/http'
 
 const FormularioRestaurante = () => {
     const { id } = useParams()
@@ -12,10 +12,8 @@ const FormularioRestaurante = () => {
 
     useEffect(() => {
         if (id) {
-            axios
-                .get<IRestaurante>(
-                    `http://localhost:8000/api/v2/restaurantes/${id}/`
-                )
+            http
+                .get<IRestaurante>(`restaurantes/${id}/`)
                 .then(resposta => {
                     setNomeRestaurante(resposta.data.nome)
                 })
