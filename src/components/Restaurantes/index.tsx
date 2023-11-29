@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FormControl, IconButton, InputLabel, MenuItem, Select, TextField } from '@mui/material'
+import { FormControl, IconButton, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select } from '@mui/material'
 import { useBuscarRestaurantes } from '@/hooks/useBuscarRestaurantes'
 import SearchIcon from '@mui/icons-material/Search'
 import Restaurante from './Restaurante'
@@ -29,18 +29,18 @@ const Restaurantes = () => {
                     className={styles.controles}
                     onSubmit={evento => handleSearchSubmit(evento)}
                 >
-                    <FormControl
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                        }}
-                    >
-                        <TextField
+                    <FormControl size='small'>
+                        <InputLabel htmlFor='search-input'>Busque por Restaurantes</InputLabel>
+                        <OutlinedInput
+                            id='search-input'
                             label="Busque por Restaurantes"
-                            variant="outlined"
-                            size="small"
                             value={termoDePesquisa}
                             onChange={evento => setTermoDePesquisa(evento.target.value)}
+                            endAdornment={
+                                <InputAdornment position='end'>
+                                    <SearchIcon />
+                                </InputAdornment>
+                            }
                         />
                         <IconButton type="submit" aria-label="busca">
                             <SearchIcon />
