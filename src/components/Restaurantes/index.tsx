@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FormControl, IconButton, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select } from '@mui/material'
+import { Button, FormControl, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select } from '@mui/material'
 import { useBuscarRestaurantes } from '@/hooks/useBuscarRestaurantes'
 import SearchIcon from '@mui/icons-material/Search'
 import Restaurante from './Restaurante'
@@ -15,7 +15,8 @@ const Restaurantes = () => {
 
         carregarDados('http://localhost:8000/api/v1/restaurantes/', {
             params: {
-                search: termoDePesquisa
+                search: termoDePesquisa,
+                ordering: opcaoDeOrdenacao
             }
         })
     }
