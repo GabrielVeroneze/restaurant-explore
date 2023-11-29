@@ -61,10 +61,10 @@ const Restaurantes = () => {
                             onChange={evento => setOpcaoDeOrdenacao(evento.target.value)}
                         >
                             <MenuItem sx={{ fontStyle: 'italic' }} value="">
-                                Nenhum
+                                Padrão
                             </MenuItem>
+                            <MenuItem value="id">ID</MenuItem>
                             <MenuItem value="nome">Nome</MenuItem>
-                            <MenuItem value="id">Id</MenuItem>
                         </Select>
                     </FormControl>
                 </form>
