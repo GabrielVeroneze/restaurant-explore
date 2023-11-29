@@ -43,9 +43,6 @@ const Restaurantes = () => {
                                 </InputAdornment>
                             }
                         />
-                        <IconButton type="submit" aria-label="busca">
-                            <SearchIcon />
-                        </IconButton>
                     </FormControl>
                     <FormControl
                         size="small"
@@ -67,6 +64,9 @@ const Restaurantes = () => {
                             <MenuItem value="nome">Nome</MenuItem>
                         </Select>
                     </FormControl>
+                    <Button type='submit' variant='contained'>
+                        Aplicar
+                    </Button>
                 </form>
             </div>
             {listaRestaurantes?.map(item => (
