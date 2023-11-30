@@ -41,7 +41,11 @@ const FormularioRestaurante = () => {
             <Typography component="h1" variant="h5" sx={{ mb: 3 }}>
                 Formulário de restaurantes
             </Typography>
-            <form onSubmit={evento => handleSubmit(evento)}>
+            <Box
+                component="form"
+                onSubmit={evento => handleSubmit(evento)}
+                sx={{ width: '100%' }}
+            >
                 <TextField
                     label="Nome do Restaurante"
                     variant="standard"
@@ -58,7 +62,7 @@ const FormularioRestaurante = () => {
                 >
                     Salvar
                 </Button>
-            </form>
+            </Box>
         </Box>
     )
 }
