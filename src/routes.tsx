@@ -3,6 +3,7 @@ import Home from '@/pages/Home'
 import VitrineRestaurantes from '@/pages/VitrineRestaurantes'
 import AdministracaoRestaurantes from '@/pages/Administracao/Restaurantes/AdministracaoRestaurantes'
 import FormularioRestaurante from '@/pages/Administracao/Restaurantes/FormularioRestaurante'
+import AdministracaoPratos from '@/pages/Administracao/Pratos/AdministracaoPratos'
 import LayoutAdmin from '@/components/LayoutAdmin'
 
 const AppRoutes = () => {
@@ -15,6 +16,7 @@ const AppRoutes = () => {
                     <Route path="restaurantes" element={<AdministracaoRestaurantes />} />
                     <Route path="restaurantes/novo" element={<FormularioRestaurante />} />
                     <Route path="restaurantes/:id" element={<FormularioRestaurante />} />
+                    <Route path="pratos" element={<AdministracaoPratos />} />
                 </Route>
             </Routes>
         </Router>
