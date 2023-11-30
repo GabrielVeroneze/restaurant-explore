@@ -10,9 +10,15 @@ const AdministracaoRestaurantes = () => {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Nome</TableCell>
-                        <TableCell>Editar</TableCell>
-                        <TableCell>Excluir</TableCell>
+                        <TableCell sx={{ fontWeight: 700 }}>
+                            Nome
+                        </TableCell>
+                        <TableCell sx={{ fontWeight: 700 }}>
+                            Editar
+                        </TableCell>
+                        <TableCell sx={{ fontWeight: 700 }}>
+                            Excluir
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

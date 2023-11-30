@@ -38,7 +38,7 @@ const FormularioRestaurante = () => {
                 flexDirection: 'column'
             }}
         >
-            <Typography component="h1" variant="h5" sx={{ mb: 3 }}>
+            <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
                 Formulário de restaurantes
             </Typography>
             <Box

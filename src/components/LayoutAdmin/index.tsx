@@ -6,7 +6,7 @@ const LayoutAdmin = () => {
         <>
             <AppBar position="static">
                 <Container maxWidth="xl">
-                    <Toolbar>
+                    <Toolbar sx={{ gap: 3 }}>
                         <Typography variant="h6">Administração</Typography>
                         <Box sx={{ width: '100%' }}>
                             <Link
