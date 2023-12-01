@@ -8,6 +8,16 @@ const FormularioPrato = () => {
     const [descricao, setDescricao] = useState<string>('')
     const [tag, setTag] = useState<string>('')
 
+    const [listaTags, setListaTags] = useState<ITag[]>([])
+
+    useEffect(() => {
+        http
+            .get<{ tags: ITag[] }>('tags/')
+            .then(resposta => {
+                setListaTags(resposta.data.tags)
+            })
+    }, [])
+
     return (
         <Box
             component="main"
@@ -63,6 +73,12 @@ const FormularioPrato = () => {
                             } 
                         }}
                     >
+                        {listaTags.map(tag => (
+                            <MenuItem key={tag.id} value={tag.value}>
+                                {tag.value}
+                            </MenuItem>
+                        ))}
+                    </Select>
                 </FormControl>
                 <Button
                     type="submit"
