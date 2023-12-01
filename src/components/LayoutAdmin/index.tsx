@@ -33,6 +33,14 @@ const LayoutAdmin = () => {
                                     Pratos
                                 </Button>
                             </Link>
+                            <Link
+                                component={RouterLink}
+                                to="/admin/pratos/novo"
+                            >
+                                <Button sx={{ color: 'white', my: 2 }}>
+                                    Novo Prato
+                                </Button>
+                            </Link>
                         </Box>
                     </Toolbar>
                 </Container>
