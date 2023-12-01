@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
 import { ITag } from '@/interfaces/ITag'
 import http from '@/http'
@@ -104,6 +105,26 @@ const FormularioPrato = () => {
                         ))}
                     </Select>
                 </FormControl>
+                <Button
+                    variant="outlined"
+                    component="label"
+                    size="large"
+                    endIcon={<UploadFileIcon />}
+                    sx={{
+                        borderColor: 'rgba(0, 0, 0, 0.42)',
+                        color: '#666666',
+                        fontSize: '1rem',
+                        justifyContent: 'left',
+                        textTransform: 'unset'
+                    }}
+                >
+                    Imagem do Prato
+                    <input
+                        type="file"
+                        onChange={evento => selecionarArquivo(evento)}
+                        hidden
+                    />
+                </Button>
                 <Button
                     type="submit"
                     variant="outlined"
