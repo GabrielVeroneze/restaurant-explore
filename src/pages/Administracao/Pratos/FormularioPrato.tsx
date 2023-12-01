@@ -80,6 +80,30 @@ const FormularioPrato = () => {
                         ))}
                     </Select>
                 </FormControl>
+                <FormControl
+                    variant="standard"
+                    fullWidth
+                >
+                    <InputLabel id="select-restaurante">Restaurante do Prato</InputLabel>
+                    <Select
+                        labelId="select-restaurante"
+                        value={restaurante}
+                        onChange={evento => setRestaurante(evento.target.value)}
+                        MenuProps={{
+                            PaperProps: {
+                                style: {
+                                    maxHeight: '188px'
+                                }
+                            } 
+                        }}
+                    >
+                        {restaurantes.map(restaurante => (
+                            <MenuItem key={restaurante.id} value={restaurante.id}>
+                                {restaurante.nome}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
                 <Button
                     type="submit"
                     variant="outlined"
