@@ -1,23 +1,10 @@
-import { useEffect, useState } from 'react'
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
-import { ITag } from '@/interfaces/ITag'
-import http from '@/http'
+import { usePratoForm } from '@/hooks/usePratoForm';
 
 const FormularioPrato = () => {
-    const [nome, setNome] = useState<string>('')
-    const [descricao, setDescricao] = useState<string>('')
-    const [tag, setTag] = useState<string>('')
+    const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
 
-    const [listaTags, setListaTags] = useState<ITag[]>([])
-
-    useEffect(() => {
-        http
-            .get<{ tags: ITag[] }>('tags/')
-            .then(resposta => {
-                setListaTags(resposta.data.tags)
-            })
-    }, [])
 
     return (
         <Box
@@ -98,7 +85,7 @@ const FormularioPrato = () => {
                             } 
                         }}
                     >
-                        {restaurantes.map(restaurante => (
+                        {listaRestaurantes.map(restaurante => (
                             <MenuItem key={restaurante.id} value={restaurante.id}>
                                 {restaurante.nome}
                             </MenuItem>
