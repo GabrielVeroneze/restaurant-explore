@@ -39,7 +39,7 @@ const FormularioRestaurante = () => {
             }}
         >
             <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
-                Formulário de restaurantes
+                Formulário de Restaurantes
             </Typography>
             <Box
                 component="form"
