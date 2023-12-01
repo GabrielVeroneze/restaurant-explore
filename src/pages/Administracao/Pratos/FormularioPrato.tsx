@@ -4,6 +4,10 @@ import { ITag } from '@/interfaces/ITag'
 import http from '@/http'
 
 const FormularioPrato = () => {
+    const [nome, setNome] = useState<string>('')
+    const [descricao, setDescricao] = useState<string>('')
+    const [tag, setTag] = useState<string>('')
+
     return (
         <Box
             component="main"
@@ -26,6 +30,40 @@ const FormularioPrato = () => {
                     width: '100%'
                 }}
             >
+                <TextField
+                    label="Nome do Prato"
+                    variant="standard"
+                    value={nome}
+                    onChange={evento => setNome(evento.target.value)}
+                    fullWidth
+                    required
+                />
+                <TextField
+                    label="Descrição do Prato"
+                    variant="standard"
+                    value={descricao}
+                    onChange={evento => setDescricao(evento.target.value)}
+                    fullWidth
+                    required
+                />
+                <FormControl
+                    variant="standard"
+                    fullWidth
+                >
+                    <InputLabel id="select-tag">Tag do Prato</InputLabel>
+                    <Select
+                        labelId="select-tag"
+                        value={tag}
+                        onChange={evento => setTag(evento.target.value)}
+                        MenuProps={{
+                            PaperProps: {
+                                style: {
+                                    maxHeight: '188px'
+                                }
+                            } 
+                        }}
+                    >
+                </FormControl>
                 <Button
                     type="submit"
                     variant="outlined"
