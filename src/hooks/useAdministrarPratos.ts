@@ -17,6 +17,21 @@ export const useAdministrarPratos = () => {
             })
     }
 
+    const cadastrarPrato = (prato: FormData) => {
+        http
+            .request({
+                url: 'pratos/',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+                data: prato
+            })
+            .then(() => {
+                alert('Prato cadastrado com sucesso!')
+            })
+    }
+
     const excluirPrato = (pratoId: number) => {
         http
             .delete(`pratos/${pratoId}/`)
@@ -31,6 +46,7 @@ export const useAdministrarPratos = () => {
 
     return {
         pratos,
+        cadastrarPrato,
         excluirPrato
     }
 }
