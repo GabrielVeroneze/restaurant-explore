@@ -4,9 +4,21 @@ import { usePratoForm } from '@/hooks/usePratoForm';
 
 const FormularioPrato = () => {
     const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
+    const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, imagem, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
 
     const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
+
+        const formData = new FormData()
+        
+        formData.append('nome', nome)
+        formData.append('descricao', descricao)
+        formData.append('tag', tag)
+        formData.append('restaurante', String(restaurante))
+        
+        if (imagem) {
+            formData.append('imagem', imagem)
+        }
 
     }
 
