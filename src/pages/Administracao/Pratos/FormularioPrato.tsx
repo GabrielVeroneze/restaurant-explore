@@ -1,9 +1,10 @@
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
+import { useAdministrarPratos } from '@/hooks/useAdministrarPratos';
 import { usePratoForm } from '@/hooks/usePratoForm';
 
 const FormularioPrato = () => {
-    const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
+    const { cadastrarPrato } = useAdministrarPratos()
     const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, imagem, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
 
     const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
@@ -19,6 +20,8 @@ const FormularioPrato = () => {
         if (imagem) {
             formData.append('imagem', imagem)
         }
+
+        cadastrarPrato(formData)
 
     }
 
