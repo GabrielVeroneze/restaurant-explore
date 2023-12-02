@@ -5,6 +5,10 @@ import { usePratoForm } from '@/hooks/usePratoForm';
 const FormularioPrato = () => {
     const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
 
+    const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault()
+
+    }
 
     return (
         <Box
