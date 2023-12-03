@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { IPrato } from '@/interfaces/IPrato'
+import { IPratoForm } from '@/interfaces/IPratoForm'
 import http from '@/http'
 
 export const useAdministrarPratos = () => {
@@ -17,22 +18,15 @@ export const useAdministrarPratos = () => {
             })
     }
 
-    const cadastrarPrato = (prato: FormData) => {
+    const cadastrarPrato = (prato: IPratoForm) => {
         http
-            .request({
-                url: 'pratos/',
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                },
-                data: prato
-            })
+            .post('pratos/', prato)
             .then(() => {
                 alert('Prato cadastrado com sucesso!')
             })
     }
 
-    const editarPrato = (prato: FormData, pratoId: string) => {
+    const editarPrato = (prato: IPratoForm, pratoId: string) => {
         http
             .put(`pratos/${pratoId}/`, prato)
             .then(() => {
