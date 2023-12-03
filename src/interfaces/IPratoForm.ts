@@ -3,5 +3,5 @@ export interface IPratoForm {
     descricao: string
     tag: string
     restaurante: number | string
-    imagem: File | null
+    imagem?: File | null
 }
