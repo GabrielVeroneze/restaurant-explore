@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
+import { IPratoForm } from '@/interfaces/IPratoForm'
 import { IRestaurante } from '@/interfaces/IRestaurante'
 import { ITag } from '@/interfaces/ITag'
 import http from '@/http'
 
 export const usePratoForm = () => {
-    const [nome, setNome] = useState<string>('')
-    const [descricao, setDescricao] = useState<string>('')
-    const [tag, setTag] = useState<string>('')
-    const [restaurante, setRestaurante] = useState<number | string>('')
-    const [imagem, setImagem] = useState<File | null>(null)
+    const [pratoForm, setPratoForm] = useState<IPratoForm>({
+        nome: '',
+        descricao: '',
+        tag: '',
+        restaurante: '',
+        imagem: null
+    })
 
     const [listaTags, setListaTags] = useState<ITag[]>([])
     const [listaRestaurantes, setListaRestaurantes] = useState<IRestaurante[]>([])
@@ -29,23 +32,21 @@ export const usePratoForm = () => {
 
     const selecionarArquivo = (evento: React.ChangeEvent<HTMLInputElement>) => {
         if (evento.target.files?.length) {
-            setImagem(evento.target.files[0])
+            setPratoForm({
+                ...pratoForm,
+                imagem: evento.target.files[0]
+            })
         } else {
-            setImagem(null)
+            setPratoForm({
+                ...pratoForm,
+                imagem: null
+            })
         }
     }
 
     return {
-        nome,
-        setNome,
-        descricao,
-        setDescricao,
-        tag,
-        setTag,
-        restaurante,
-        setRestaurante,
-        imagem,
-        setImagem,
+        pratoForm,
+        setPratoForm,
         listaTags,
         listaRestaurantes,
         selecionarArquivo
