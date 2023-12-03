@@ -30,21 +30,10 @@ const FormularioPrato = () => {
     const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
 
-        const formData = new FormData()
-        
-        formData.append('nome', nome)
-        formData.append('descricao', descricao)
-        formData.append('tag', tag)
-        formData.append('restaurante', String(restaurante))
-        
-        if (imagem) {
-            formData.append('imagem', imagem)
-        }
-
         if (id) {
-            editarPrato(formData, id)
+            editarPrato(pratoForm, id)
         } else {
-            cadastrarPrato(formData)
+            cadastrarPrato(pratoForm)
         }
 
         setNome('')
