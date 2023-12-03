@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
 import { useAdministrarPratos } from '@/hooks/useAdministrarPratos';
 import { usePratoForm } from '@/hooks/usePratoForm';
+import { IPrato } from '@/interfaces/IPrato';
+import http from '@/http';
 
 const FormularioPrato = () => {
     const { cadastrarPrato } = useAdministrarPratos()
@@ -12,6 +14,14 @@ const FormularioPrato = () => {
 
     useEffect(() => {
         if (id) {
+            http
+                .get<IPrato>(`pratos/${id}/`)
+                .then(resposta => {
+                    setNome(resposta.data.nome)
+                    setDescricao(resposta.data.descricao)
+                    setTag(resposta.data.tag)
+                    setRestaurante(resposta.data.restaurante)
+                })
         }
     }, [id])
 
