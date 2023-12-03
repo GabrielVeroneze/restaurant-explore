@@ -1,10 +1,12 @@
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import { useParams } from 'react-router-dom';
 import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
 import { useAdministrarPratos } from '@/hooks/useAdministrarPratos';
 import { usePratoForm } from '@/hooks/usePratoForm';
 
 const FormularioPrato = () => {
     const { cadastrarPrato } = useAdministrarPratos()
+    const { id } = useParams()
     const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, imagem, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
 
     const handleSubmit = (evento: React.FormEvent<HTMLFormElement>) => {
