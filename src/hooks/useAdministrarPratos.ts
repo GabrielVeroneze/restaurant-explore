@@ -32,6 +32,14 @@ export const useAdministrarPratos = () => {
             })
     }
 
+    const editarPrato = (prato: FormData, id: string) => {
+        http
+            .put(`pratos/${id}/`, prato)
+            .then(() => {
+                alert('Prato atualizado com sucesso!')
+            })
+    }
+
     const excluirPrato = (pratoId: number) => {
         http
             .delete(`pratos/${pratoId}/`)
@@ -47,6 +55,7 @@ export const useAdministrarPratos = () => {
     return {
         pratos,
         cadastrarPrato,
+        editarPrato,
         excluirPrato
     }
 }
