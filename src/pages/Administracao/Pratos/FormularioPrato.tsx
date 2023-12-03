@@ -10,7 +10,7 @@ import http from '@/http';
 const FormularioPrato = () => {
     const { id } = useParams()
     const { cadastrarPrato, editarPrato } = useAdministrarPratos()
-    const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, imagem, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
+    const { pratoForm, setPratoForm, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
 
     useEffect(() => {
         if (id) {
@@ -76,16 +76,26 @@ const FormularioPrato = () => {
                 <TextField
                     label="Nome do Prato"
                     variant="standard"
-                    value={nome}
-                    onChange={evento => setNome(evento.target.value)}
+                    value={pratoForm.nome}
+                    onChange={evento => 
+                        setPratoForm({
+                            ...pratoForm,
+                            nome: evento.target.value
+                        })
+                    }
                     fullWidth
                     required
                 />
                 <TextField
                     label="Descrição do Prato"
                     variant="standard"
-                    value={descricao}
-                    onChange={evento => setDescricao(evento.target.value)}
+                    value={pratoForm.descricao}
+                    onChange={evento => 
+                        setPratoForm({
+                            ...pratoForm,
+                            descricao: evento.target.value
+                        })
+                    }
                     fullWidth
                     required
                 />
@@ -96,8 +106,13 @@ const FormularioPrato = () => {
                     <InputLabel id="select-tag">Tag do Prato</InputLabel>
                     <Select
                         labelId="select-tag"
-                        value={tag}
-                        onChange={evento => setTag(evento.target.value)}
+                        value={pratoForm.tag}
+                        onChange={evento => 
+                            setPratoForm({
+                                ...pratoForm,
+                                tag: evento.target.value
+                            })
+                        }
                         MenuProps={{
                             PaperProps: {
                                 style: {
@@ -120,8 +135,13 @@ const FormularioPrato = () => {
                     <InputLabel id="select-restaurante">Restaurante do Prato</InputLabel>
                     <Select
                         labelId="select-restaurante"
-                        value={restaurante}
-                        onChange={evento => setRestaurante(evento.target.value)}
+                        value={pratoForm.restaurante}
+                        onChange={evento => 
+                            setPratoForm({
+                                ...pratoForm,
+                                restaurante: evento.target.value
+                            })
+                        }
                         MenuProps={{
                             PaperProps: {
                                 style: {
