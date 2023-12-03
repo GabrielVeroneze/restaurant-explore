@@ -32,9 +32,9 @@ export const useAdministrarPratos = () => {
             })
     }
 
-    const editarPrato = (prato: FormData, id: string) => {
+    const editarPrato = (prato: FormData, pratoId: string) => {
         http
-            .put(`pratos/${id}/`, prato)
+            .put(`pratos/${pratoId}/`, prato)
             .then(() => {
                 alert('Prato atualizado com sucesso!')
             })
