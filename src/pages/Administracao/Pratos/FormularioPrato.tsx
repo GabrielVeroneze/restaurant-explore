@@ -8,8 +8,8 @@ import { IPrato } from '@/interfaces/IPrato';
 import http from '@/http';
 
 const FormularioPrato = () => {
-    const { cadastrarPrato } = useAdministrarPratos()
     const { id } = useParams()
+    const { cadastrarPrato, editarPrato } = useAdministrarPratos()
     const { nome, setNome, descricao, setDescricao, tag, setTag, restaurante, setRestaurante, imagem, selecionarArquivo, listaTags, listaRestaurantes } = usePratoForm()
 
     useEffect(() => {
@@ -39,7 +39,11 @@ const FormularioPrato = () => {
             formData.append('imagem', imagem)
         }
 
-        cadastrarPrato(formData)
+        if (id) {
+            editarPrato(formData, id)
+        } else {
+            cadastrarPrato(formData)
+        }
 
         setNome('')
         setDescricao('')
