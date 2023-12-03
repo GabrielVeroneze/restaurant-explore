@@ -36,10 +36,13 @@ const FormularioPrato = () => {
             cadastrarPrato(pratoForm)
         }
 
-        setNome('')
-        setDescricao('')
-        setTag('')
-        setRestaurante('')
+        setPratoForm({
+            nome: '',
+            descricao: '',
+            tag: '',
+            restaurante: '',
+            imagem: null
+        })
     }
 
     return (
