@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
 import { useAdministrarPratos } from '@/hooks/useAdministrarPratos';
 import { usePratoForm } from '@/hooks/usePratoForm';
-import { IPrato } from '@/interfaces/IPrato';
+import { IPratoForm } from '@/interfaces/IPratoForm';
 import http from '@/http';
 
 const FormularioPrato = () => {
@@ -15,12 +15,14 @@ const FormularioPrato = () => {
     useEffect(() => {
         if (id) {
             http
-                .get<IPrato>(`pratos/${id}/`)
+                .get<IPratoForm>(`pratos/${id}/`)
                 .then(resposta => {
-                    setNome(resposta.data.nome)
-                    setDescricao(resposta.data.descricao)
-                    setTag(resposta.data.tag)
-                    setRestaurante(resposta.data.restaurante)
+                    setPratoForm({
+                        nome: resposta.data.nome,
+                        descricao: resposta.data.descricao,
+                        tag: resposta.data.tag,
+                        restaurante: resposta.data.restaurante,
+                    })
                 })
         }
     }, [id])
